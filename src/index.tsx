@@ -89,9 +89,8 @@ export default class InfiniteScroll extends Component<Props, State> {
       typeof this.props.initialScrollY === 'number' &&
       this.el &&
       this.el instanceof HTMLElement &&
-      this.el.scrollHeight > this.props.initialScrollY
     ) {
-      this.el.scrollTo(0, this.props.initialScrollY);
+      this.el.scrollTo(0, this.el.scrollHeight * this.props.initialScrollY);
     }
 
     if (this.props.pullDownToRefresh && this.el) {
